@@ -1,0 +1,38 @@
+ValueEventListener UserListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            User us = dataSnapshot.getValue(User.class);
+
+                            Toast toast = Toast.makeText(getApplicationContext(),"Usuario: "+us.name+" : "+us.pass, Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        Toast toast = Toast.makeText(getApplicationContext(),"ERROR DE LECTURA", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                };
+
+--------------------------------------------------------------Funcionando---------------------------------
+
+//mDatabase.child("users").child("usuario1").setValue("contraseña1"); //AÑADIR DATO EJEMPLO
+
+ dbCielo.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String valor = (String) dataSnapshot.getValue();
+
+                        Tusuario.setText(valor);
+                        Toast toast = Toast.makeText(getApplicationContext(), valor, Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.e("ERROR: ", "Error!", databaseError.toException());
+                    }
+                });
+
+----------------------------------------------------------------------------------------

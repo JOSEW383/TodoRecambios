@@ -1,6 +1,8 @@
 package gi1819.trabajo.todorecambios;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,56 +28,45 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        //mDatabase.child("users").child("usuario1").setValue("contraseña1"); //AÑADIR DATO EJEMPLO
         iniciaRegistro();
-
-
-
     }
 
     private void iniciaRegistro() {
-
-
         Button BiniciarSesion = findViewById(R.id.BiniciarSesion);
 
         BiniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText Tusuario = findViewById(R.id.Tusuario);
-                EditText Tcontraseniaa = findViewById(R.id.Tcontrasenia);
+                final EditText Tusuario = findViewById(R.id.Tusuario);
+                final EditText Tcontraseniaa = findViewById(R.id.Tcontrasenia);
 
-                //Toast toast = Toast.makeText(getApplicationContext(), "Usuario "+Tusuario.getText()+" incorrecto", Toast.LENGTH_SHORT);
-                //toast.show();
-                //mDatabase = FirebaseDatabase.getInstance().getReference();
+                DatabaseReference miBD = FirebaseDatabase.getInstance().getReference()
+                                .child("usuarios")
+                                .child(Tusuario.getText().toString());
 
-                /*final String value = "";
-                Toast toast = Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT);
-                toast.show();*/
-
-
-
-                /*ValueEventListener UserListener = new ValueEventListener() {
+                miBD.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            User us = dataSnapshot.getValue(User.class);
+                        String valor = (String) dataSnapshot.getValue();
 
-                            Toast toast = Toast.makeText(getApplicationContext(),"Usuario: "+us.name+" : "+us.pass, Toast.LENGTH_SHORT);
+                        if(valor==null){
+                            Toast toast = Toast.makeText(getApplicationContext(), "El usuario no existe", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }else if(valor.equals(Tcontraseniaa.getText().toString())){ //Usuario y contrasenia correcto
+                            Toast toast = Toast.makeText(getApplicationContext(), "Login correcto", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }else{
+                            Toast toast = Toast.makeText(getApplicationContext(), "Contraseña incorrecta", Toast.LENGTH_SHORT);
                             toast.show();
                         }
                     }
+
                     @Override
-                    public void onCancelled(DatabaseError error) {
-                        Toast toast = Toast.makeText(getApplicationContext(),"ERROR DE LECTURA", Toast.LENGTH_SHORT);
+                    public void onCancelled(DatabaseError databaseError) {
+                        Toast toast = Toast.makeText(getApplicationContext(), "Error en la base de datos", Toast.LENGTH_SHORT);
                         toast.show();
                     }
-                };*/
-
-
-
-
-
+                });
             }
         });
     }

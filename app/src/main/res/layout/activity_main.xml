@@ -11,9 +11,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="USUARIO"
+            android:hint="Usuario"
             android:layout_gravity="center"
-            android:layout_marginTop="70pt"/>
+            android:layout_marginTop="70pt" />
 
         <EditText
             android:id="@+id/Tcontrasenia"
@@ -21,13 +21,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
-            android:text="CONTRASEÑA"
+            android:hint="Contraseña"
             android:layout_gravity="center"
             android:layout_marginBottom="20pt"/>
 
         <Button
             android:id="@+id/BiniciarSesion"
-            android:layout_width="wrap_content"
+            android:layout_width="60pt"
             android:layout_height="wrap_content"
             android:text="INICIAR SESION"
             android:layout_gravity="center"
