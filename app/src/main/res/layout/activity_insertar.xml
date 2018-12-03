@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondolista">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TIPO: "
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tipoPieza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tipodelapieza"
+            android:gravity="center"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOMBRE: "
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/Tnombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FABRICANTE:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/Tfabricante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20pt"/>
+
+    <Button
+        android:id="@+id/Binsertar"
+        android:layout_width="60pt"
+        android:layout_height="wrap_content"
+        android:text="INSERTAR"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"/>
+    </LinearLayout>
+</LinearLayout>

@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Activities.TpiezasActivity" />
         <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.PiezasActivity"></activity>
+        <activity android:name=".Activities.PiezasActivity" />
+        <activity android:name=".Activities.InsertarActivity"></activity>
     </application>
 
 </manifest>

@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -40,6 +42,33 @@ public class PiezasActivity extends AppCompatActivity {
         datos = new ArrayList<>();
 
         inicializaArray();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.insertar:
+                if(us.rol.equals("administrador")||us.rol.equals("usuario")){
+                    Intent intent = new Intent(getApplication(), InsertarActivity.class);
+                    intent.putExtra("tipoPieza", Tpieza);
+                    startActivity(intent);
+                }else{
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "No tienes permisos para añadir piezas",
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     private void inicializaArray() {
