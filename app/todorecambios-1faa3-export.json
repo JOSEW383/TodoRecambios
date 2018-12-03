@@ -1,0 +1,156 @@
+{
+  "Tpiezas" : {
+    "chapa" : {
+      "ALETA DELANTERA DCH CON AUJERO PARA PILOTO CX3 16" : {
+        "fabricante" : "mazda",
+        "nombre" : "ALETA DELANTERA DCH CON AUJERO PARA PILOTO CX3 16",
+        "tipo" : "chapa"
+      },
+      "ALETA DELANTERA IZQ CON AUJERO PARA PILOTO CX3 16" : {
+        "fabricante" : "mazda",
+        "nombre" : "ALETA DELANTERA IZQ CON AUJERO PARA PILOTO CX3 16",
+        "tipo" : "chapa"
+      },
+      "PARAGOLPES DELANTERO NEGRO-LISO A IMPRIMAR" : {
+        "fabricante" : "mazda",
+        "nombre" : "PARAGOLPES DELANTERO NEGRO-LISO A IMPRIMAR\"",
+        "tipo" : "chapa"
+      },
+      "PARAGOLPES TRASERO-IMPRIMADO" : {
+        "fabricante" : "mazda",
+        "nombre" : "PARAGOLPES TRASERO-IMPRIMADO",
+        "tipo" : "chapa"
+      },
+      "Rejilla negra" : {
+        "fabricante" : "mazda",
+        "nombre" : "Rejilla negra",
+        "tipo" : "chapa"
+      }
+    },
+    "cristales" : "",
+    "iluminacion" : {
+      "Bombillas Xenon" : {
+        "fabricante" : "renault",
+        "nombre" : "Bombillas Xenon",
+        "tipo" : "iluminacion"
+      },
+      "Bombillas interior" : {
+        "fabricante" : "renault",
+        "nombre" : "Bombillas interior",
+        "tipo" : "iluminacion"
+      },
+      "Bombillas luz delantera" : {
+        "fabricante" : "renault",
+        "nombre" : "Bombillas luz delantera",
+        "tipo" : "iluminacion"
+      },
+      "Bombillas luz trasera" : {
+        "fabricante" : "renault",
+        "nombre" : "Bombilla luz trasera",
+        "tipo" : "iluminacion"
+      },
+      "Bombillas señalizacion delantera" : {
+        "fabricante" : "renault",
+        "nombre" : "Bombilla señalizacion delantera",
+        "tipo" : "iluminacion"
+      },
+      "Bombillas señalizacion trasera" : {
+        "fabricante" : "renault",
+        "nombre" : "Bombillas señalizacion trasera",
+        "tipo" : "iluminacion"
+      },
+      "Estuches bombillas" : {
+        "fabricante" : "renault",
+        "nombre" : "Estuches bombillas",
+        "tipo" : "iluminacion"
+      },
+      "Iluminacion LED" : {
+        "fabricante" : "renault",
+        "nombre" : "Iluminacion LED",
+        "tipo" : "iluminacion"
+      }
+    },
+    "motor" : {
+      "Alimentacion" : {
+        "fabricante" : "ford",
+        "nombre" : "Alimentacion",
+        "tipo" : "motor"
+      },
+      "Cable de acelerador y starter" : {
+        "fabricante" : "ford",
+        "nombre" : "Cable de acelerador y starter",
+        "tipo" : "motor"
+      },
+      "Correas" : {
+        "fabricante" : "ford",
+        "nombre" : "Correas",
+        "tipo" : "motor"
+      },
+      "Herramienta Especifica" : {
+        "fabricante" : "ford",
+        "nombre" : "Herramienta Especifica",
+        "tipo" : "motor"
+      },
+      "Juntas y otras piezas del motor" : {
+        "fabricante" : "ford",
+        "nombre" : "Juntas y otras piezas del motor",
+        "tipo" : "motor"
+      },
+      "Kits" : {
+        "fabricante" : "ford",
+        "nombre" : "Kits",
+        "tipo" : "motor"
+      },
+      "Kits de distribucion" : {
+        "fabricandte" : "ford",
+        "nombre" : "Kits de distribucion",
+        "tipo" : "motor"
+      },
+      "Poleas" : {
+        "fabricante" : "ford",
+        "nombre" : "Poleas",
+        "tipo" : "motor"
+      },
+      "Sensores electronicos y medidores de flujo" : {
+        "fabricante" : "ford",
+        "nombre" : "Sensores electronicos y medidores de flujo",
+        "tipo" : "flujo"
+      },
+      "Turbocompresores" : {
+        "fabricante" : "ford",
+        "nombre" : "Turbocompresores",
+        "tipo" : "motor"
+      },
+      "Valvulas EGR" : {
+        "fabricante" : "ford",
+        "nombre" : "Valvulas EGR",
+        "tipo" : "motor"
+      }
+    },
+    "otros" : "",
+    "pinturas" : "",
+    "sensores" : ""
+  },
+  "Usuarios" : {
+    "a" : {
+      "contrasenia" : "a",
+      "nombre" : "a",
+      "rol" : "administrador"
+    },
+    "admin" : {
+      "contrasenia" : "admin",
+      "nombre" : "admin",
+      "rol" : "administrador"
+    },
+    "inv" : {
+      "contrasenia" : "inv",
+      "nombre" : "inv",
+      "rol" : "invitado"
+    },
+    "user" : {
+      "contrasenia" : "user",
+      "nombre" : "inv",
+      "rol" : "usuario"
+    }
+  }
+}

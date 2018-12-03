@@ -19,13 +19,15 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
+import gi1819.trabajo.todorecambios.Adapters.PiezaAdapter;
+import gi1819.trabajo.todorecambios.Class.Pieza;
 import gi1819.trabajo.todorecambios.Class.Usuario;
 import gi1819.trabajo.todorecambios.R;
 
 public class PiezasActivity extends AppCompatActivity {
 
     private String Tpieza;
-    private ArrayList<String> datos = null;
+    private ArrayList<Pieza> datos = null;
     private Usuario us;
 
     @Override
@@ -50,12 +52,10 @@ public class PiezasActivity extends AppCompatActivity {
         ChildEventListener childEventListener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
-                datos.add(dataSnapshot.getKey().toString());
+                Pieza pi = dataSnapshot.getValue(Pieza.class);
+                datos.add(pi);
 
-                ArrayAdapter adaptador =
-                        new ArrayAdapter<>(getApplicationContext(),
-                                android.R.layout.simple_list_item_1, datos);
-
+                ArrayAdapter adaptador = new PiezaAdapter(getApplicationContext(),datos);
 
                 ListView LstPiezas = findViewById(R.id.LstPiezas);
 

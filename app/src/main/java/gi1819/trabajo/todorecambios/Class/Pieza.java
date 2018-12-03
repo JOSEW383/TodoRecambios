@@ -1,5 +1,8 @@
 package gi1819.trabajo.todorecambios.Class;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
+@IgnoreExtraProperties
 public class Pieza {
     public String nombre;
     public String fabricante;
