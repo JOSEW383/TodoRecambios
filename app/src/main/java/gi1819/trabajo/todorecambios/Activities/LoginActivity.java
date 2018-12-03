@@ -1,13 +1,11 @@
-package gi1819.trabajo.todorecambios;
+package gi1819.trabajo.todorecambios.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,24 +14,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import gi1819.trabajo.todorecambios.R;
+import gi1819.trabajo.todorecambios.Usuario;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
-    private DatabaseReference mDatabase;
-    private Usuario usuarioActual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        iniciaRegistro();
-
-    }
-
-    //---------------------------------------METODOS--------------------------------------------
-    private void iniciaRegistro() {
         Button BiniciarSesion = findViewById(R.id.BiniciarSesion);
 
         BiniciarSesion.setOnClickListener(new View.OnClickListener() {
@@ -43,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 final EditText Tcontraseniaa = findViewById(R.id.Tcontrasenia);
 
                 DatabaseReference miBD = FirebaseDatabase.getInstance().getReference()
-                                .child("Usuarios")
-                                .child(Tusuario.getText().toString());
+                        .child("Usuarios")
+                        .child(Tusuario.getText().toString());
 
                 miBD.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -77,5 +68,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 }

@@ -1,4 +1,4 @@
-package gi1819.trabajo.todorecambios;
+package gi1819.trabajo.todorecambios.Activities;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +14,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+
+import gi1819.trabajo.todorecambios.R;
+import gi1819.trabajo.todorecambios.Usuario;
 
 public class TpiezaActivity extends AppCompatActivity {
     private Usuario us;
