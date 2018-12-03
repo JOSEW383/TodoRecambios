@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import gi1819.trabajo.todorecambios.R;
-import gi1819.trabajo.todorecambios.Usuario;
+import gi1819.trabajo.todorecambios.Class.Usuario;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,11 +33,11 @@ public class LoginActivity extends AppCompatActivity {
                 final EditText Tusuario = findViewById(R.id.Tusuario);
                 final EditText Tcontraseniaa = findViewById(R.id.Tcontrasenia);
 
-                DatabaseReference miBD = FirebaseDatabase.getInstance().getReference()
+                DatabaseReference datosUsuario = FirebaseDatabase.getInstance().getReference()
                         .child("Usuarios")
                         .child(Tusuario.getText().toString());
 
-                miBD.addListenerForSingleValueEvent(new ValueEventListener() {
+                datosUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         //String valor = (String) dataSnapshot.getValue(); //Para obtener el valor (si solo hubiese uno)
@@ -50,9 +50,10 @@ public class LoginActivity extends AppCompatActivity {
                             /*Toast toast = Toast.makeText(getApplicationContext(), "Login correcto", Toast.LENGTH_SHORT);
                             toast.show();*/
 
-                            Intent intent = new Intent(getApplication(), TpiezaActivity.class);
+                            Intent intent = new Intent(getApplication(), TpiezasActivity.class);
                             intent.putExtra("usuario", us);
                             startActivity(intent);
+                            finish();
 
                         }else{
                             Toast toast = Toast.makeText(getApplicationContext(), "Contraseña incorrecta", Toast.LENGTH_SHORT);

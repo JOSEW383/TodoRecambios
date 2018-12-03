@@ -1,4 +1,4 @@
-package gi1819.trabajo.todorecambios;
+package gi1819.trabajo.todorecambios.Class;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
@@ -8,15 +8,15 @@ import java.io.Serializable;
 public class Usuario implements Serializable {
     public String nombre;
     public String contrasenia;
-    public boolean administrador;
+    public String rol;
 
     public Usuario() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public Usuario(String nombre, String contrasenia, boolean administrador) {
+    public Usuario(String nombre, String contrasenia, String rol) {
         this.nombre = nombre;
         this.contrasenia = contrasenia;
-        this.administrador = administrador;
+        this.rol = rol;
     }
 }

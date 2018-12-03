@@ -1,4 +1,4 @@
-package gi1819.trabajo.todorecambios;
+package gi1819.trabajo.todorecambios.Class;
 
 public class Pieza {
     public String nombre;
