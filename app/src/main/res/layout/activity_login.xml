@@ -13,7 +13,7 @@
         android:inputType="textPersonName"
         android:hint="Usuario"
         android:layout_gravity="center"
-        android:layout_marginTop="70pt" />
+        android:layout_marginTop="70pt"/>
 
     <EditText
         android:id="@+id/Tcontrasenia"
@@ -23,7 +23,8 @@
         android:inputType="textPassword"
         android:hint="Contraseña"
         android:layout_gravity="center"
-        android:layout_marginBottom="20pt"/>
+        android:layout_marginBottom="20pt"
+        android:singleLine="true"/>
 
     <Button
         android:id="@+id/BiniciarSesion"

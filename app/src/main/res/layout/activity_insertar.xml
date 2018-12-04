@@ -60,7 +60,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_gravity="center"
-        android:layout_marginBottom="20pt"/>
+        android:layout_marginBottom="20pt"
+        android:singleLine="true"/>
 
     <Button
         android:id="@+id/Binsertar"

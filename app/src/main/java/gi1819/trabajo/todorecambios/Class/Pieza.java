@@ -2,8 +2,10 @@ package gi1819.trabajo.todorecambios.Class;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
+import java.io.Serializable;
+
 @IgnoreExtraProperties
-public class Pieza {
+public class Pieza  implements Serializable {
     public String nombre;
     public String fabricante;
     public String tipo;

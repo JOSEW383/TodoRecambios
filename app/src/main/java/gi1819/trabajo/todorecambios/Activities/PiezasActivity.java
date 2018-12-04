@@ -39,8 +39,13 @@ public class PiezasActivity extends AppCompatActivity {
 
         us = (Usuario)getIntent().getExtras().getSerializable("usuario");
         Tpieza = (String)getIntent().getExtras().getSerializable("tipoPieza");
-        datos = new ArrayList<>();
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //Oncreate() -> OnStart() -> OnResume()
         inicializaArray();
     }
 
@@ -54,7 +59,7 @@ public class PiezasActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.insertar:
-                if(us.rol.equals("administrador")||us.rol.equals("usuario")){
+                if(us.rol.equals("administrador")){
                     Intent intent = new Intent(getApplication(), InsertarActivity.class);
                     intent.putExtra("tipoPieza", Tpieza);
                     startActivity(intent);
@@ -73,6 +78,7 @@ public class PiezasActivity extends AppCompatActivity {
 
     private void inicializaArray() {
 
+        datos = new ArrayList<>();
         DatabaseReference Tpiezas =
                 FirebaseDatabase.getInstance().getReference()
                         .child("Tpiezas")
@@ -90,9 +96,18 @@ public class PiezasActivity extends AppCompatActivity {
 
                 LstPiezas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                        String opcionSeleccionada = a.getItemAtPosition(position).toString();
-                        Toast toast = Toast.makeText(getApplicationContext(), opcionSeleccionada, Toast.LENGTH_SHORT);
-                        toast.show();
+                        Pieza piez = (Pieza)a.getItemAtPosition(position);
+
+                        if(us.rol.equals("administrador")){
+                            Intent intent = new Intent(getApplication(), ModificarActivity.class);
+                            intent.putExtra("pieza", piez);
+                            startActivity(intent);
+                        }else{
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "No tienes permisos para modificar las piezas",
+                                    Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
                     }
                 });
 
