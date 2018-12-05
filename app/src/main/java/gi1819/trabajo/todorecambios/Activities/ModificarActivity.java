@@ -1,14 +1,19 @@
 package gi1819.trabajo.todorecambios.Activities;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import gi1819.trabajo.todorecambios.Class.Pieza;
 import gi1819.trabajo.todorecambios.R;
@@ -56,11 +61,26 @@ public class ModificarActivity extends AppCompatActivity {
     }
 
     private void eliminaPieza(){
-        FirebaseDatabase.getInstance().getReference()
+
+        final DatabaseReference miBD = FirebaseDatabase.getInstance().getReference()
                 .child("Tpiezas")
-                .child(pieza.tipo)
-                .child(pieza.nombre)
-                .removeValue();
+                .child(pieza.tipo);
+
+                miBD.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long numHijos = dataSnapshot.getChildrenCount();
+                if(numHijos<2){
+                    miBD.setValue("");
+                }else{
+                    miBD.child(pieza.nombre).removeValue();
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast toast = Toast.makeText(getApplicationContext(), "Error de Firebase", Toast.LENGTH_SHORT);
+                toast.show();
+            }});
     }
 
     private void insertaPieza(){
